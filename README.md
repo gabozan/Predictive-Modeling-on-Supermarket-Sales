@@ -1,25 +1,36 @@
-# Predicció de sucursal per a optimització d'stock
+# Predictive-Modeling-on-Supermarket-Sales
 
-## Descripció del Projecte
-L’objectiu és predir la sucursal (**Branch**) on es realitzen les vendes per optimitzar la gestió dels inventaris de productes a cada ubicació. Per aconseguir-ho, es desenvoluparan diferents models de predicció que permetin estimar la variable objectiu amb la màxima precisió possible. A més, s'ha de tenir en compte que les dades son d'una empresa que està en constant expansió, es a dir, que proximament obrirà més sucursals. El dataset inclou 17 columnes i 1000 mostres (transaccions). Mitjançant la predicció precisa de la sucursal, les empreses poden:
-- Evitar problemes d'excés o falta d'stock.
-- Millorar l'experiència del client en assegurar la disponibilitat de productes.
+## 🧠 Objetivo: Predicción de Sucursal para la Optimización de Stock
 
-## Dataset
-El conjunt de dades conté informació sobre transaccions en tres sucursals, incloent-hi detalls com:
-- Invoice ID
-- Branch,City
-- Customer type
-- Gender
-- Product line
-- Unit price
-- Quantity
-- Tax 5%
-- Total
-- Date
-- Time
-- Payment
-- cogs
-- gross margin percentage
-- gross income
-- Rating
+## 📌 Descripción General
+Este proyecto tiene como objetivo desarrollar y evaluar modelos de clasificación que permitan predecir la sucursal (`Branch`) en la que se realiza cada venta, utilizando técnicas de aprendizaje supervisado. El objetivo final es facilitar una mejor planificación del stock en función de la demanda localizada.
+
+Dado que la empresa está en expansión y abrirá nuevas sucursales próximamente, el modelo debe ser escalable y tener buena capacidad de generalización.
+
+## 📊 Dataset
+El conjunto de datos contiene 1.000 transacciones registradas en 3 sucursales diferentes, con 17 atributos por registro. Algunas columnas del dataset:
+
+- `Invoice ID`, `Branch`, `City`, `Customer type`, `Gender`
+- `Product line`, `Unit price`, `Quantity`
+- `Date`, `Time`, `Payment`
+- `Gross income`, `Total`, `Rating`
+
+## 🔍 Enfoque del Proyecto
+1. Preprocesamiento
+- Detección y visualización de valores nulos (`missingno`)
+- Conversión de variables categóricas con `LabelEncoder` y `OneHotEncoder`
+- Normalización de atributos numéricos con `StandardScaler`
+
+2. Modelado
+- Se entrenaron y evaluaron múltiples modelos de clasificación, incluyendo:
+- `Logistic Regression`
+- `Support Vector Machines (SVC)`
+- `K-Nearest Neighbors (KNN)`
+- `Decision Trees`
+- `Random Forest`
+- `AdaBoost`
+
+3. Evaluación
+- División de datos en train/test con `train_test_split`
+- Validación cruzada con `StratifiedKFold` y `cross_val_score`
+- Evaluación con métricas: `accuracy`, `ROC AUC`, `confusion matrix`
